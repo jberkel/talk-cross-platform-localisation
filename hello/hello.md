@@ -21,6 +21,13 @@
 
 !SLIDE
 
+# m.soundcloud.com
+
+<iframe
+class="zoomed" src="http://m.soundcloud.com"></iframe>
+
+!SLIDE
+
 # before you localise...
 
 !SLIDE
@@ -39,14 +46,20 @@
 
 !SLIDE
 
-# tools aren't that great
+# we tried github's editor
+
+<img src="hello/github_editor.png" />
+
+!SLIDE
+
+# existing tools aren't that great
 
 <iframe
 class="zoomed" src="http://crowdin.net"></iframe>
 
 !SLIDE
 
-# tools aren't that great #2
+# tools #2
 
 <iframe
 class="zoomed" src="https://www.transifex.net/start/"></iframe>
@@ -104,11 +117,13 @@ class="zoomed" src="https://www.transifex.net/start/"></iframe>
 
 !SLIDE
 
+# nice to haves
+
+
   * history
-  * non-dev friendly
   * provide translation context
-  * later: Git(hub) integration
-  * integrate with translation services
+  * later: integration with Git(hub)
+  * integration with translation services
 
 !SLIDE
 
@@ -119,12 +134,31 @@ src="http://mygengo.com/api/developer-docs/methods/translate-job-post/"></iframe
 
 !SLIDE
 
+# demo
+
+!SLIDE
+
 # start early!
+
+!SLIDE
+
+### have consistent / namespaced keys
+
+#### Android
+
+    <string name="dashboard_ticker_title">New new message</string>
+    <string name="dashboard_ticker_message">You have a new message</string>
+
+#### iOS
+
+    "dashboard_ticker_title" = "New message";
+    "dashboard_ticker_message" = "You have a new message";
 
 !SLIDE
 
 # l10n/i18n: it's hard
 
+<a href="http://bit.ly/localehorror">http://bit.ly/localehorror</a>
 <iframe
 class="zoomed" src="http://search.cpan.org/dist/Locale-Maketext/lib/Locale/Maketext/TPJ13.pod#A_Localization_Horror_Story:_It_Could_Happen_To_You"></iframe>
 
@@ -134,3 +168,7 @@ class="zoomed" src="http://search.cpan.org/dist/Locale-Maketext/lib/Locale/Maket
 
 <iframe
 class="zoomed" src="http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html"></iframe>
+
+!SLIDE
+
+# questions?
