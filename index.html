@@ -1,0 +1,119 @@
+<html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>Cross-platform localisation</title>
+        <link href="assets/css/show.css" type="text/css" rel="stylesheet" />
+        <link href="assets/css/prettify.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/show.js"></script>
+        <script type="text/javascript" src="assets/js/prettify/prettify.js"></script>
+        <script type="text/javascript" src="assets/js/prettify/lang-apollo.js"></script><script type="text/javascript" src="assets/js/prettify/lang-css.js"></script><script type="text/javascript" src="assets/js/prettify/lang-hs.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lisp.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lua.js"></script><script type="text/javascript" src="assets/js/prettify/lang-ml.js"></script><script type="text/javascript" src="assets/js/prettify/lang-proto.js"></script><script type="text/javascript" src="assets/js/prettify/lang-scala.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vb.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vhdl.js"></script><script type="text/javascript" src="assets/js/prettify/lang-wiki.js"></script><script type="text/javascript" src="assets/js/prettify/lang-yaml.js"></script><link href="css/custom.css?1318247175622" type="text/css" rel="stylesheet" />
+      <script type="text/javascript"><!--
+        window.onload=function() { prettyPrint(); };
+      --></script>
+      </head>
+      <body>
+        <div id="slides">
+          <div id="reel">
+            <div class="content" id="slide-0">
+       <div class="container"><h1>Cross-platform localisation</h1><h2>Jan Berkel, SoundCloud</h2><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h2>@jberkel</h2></div>
+      </div><div class="content" id="slide-1">
+       <div class="container"><h1>a bit of context</h1><img class="big" src="hello/iphone_you.jpg"/>
+<img class="big" src="hello/android_you.jpg"/>
+</div>
+      </div><div class="content" id="slide-2">
+       <div class="container"><h1>m.soundcloud.com</h1><iframe
+class="zoomed" src="http://m.soundcloud.com"></iframe>
+</div>
+      </div><div class="content" id="slide-3">
+       <div class="container"><h1>before you localise...</h1></div>
+      </div><div class="content" id="slide-4">
+       <div class="container"><h1>you need:</h1><h2>consistent wording, cross-platform.</h2></div>
+      </div><div class="content" id="slide-5">
+       <div class="container"><h1>changing the wording of the app(s)</h1><h3>typical email from marketing/product mgmt/...:</h3><blockquote>
+<p> can you just change this word to something else? </p>
+</blockquote>
+</div>
+      </div><div class="content" id="slide-6">
+       <div class="container"><h1>we tried github's editor</h1><img src="hello/github_editor.png" />
+</div>
+      </div><div class="content" id="slide-7">
+       <div class="container"><h1>existing tools aren't that great</h1><iframe
+class="zoomed" src="http://crowdin.net"></iframe>
+</div>
+      </div><div class="content" id="slide-8">
+       <div class="container"><h1>tools #2</h1><iframe
+class="zoomed" src="https://www.transifex.net/start/"></iframe>
+</div>
+      </div><div class="content" id="slide-9">
+       <div class="container"><h1>so everybody is reinventing the wheel</h1></div>
+      </div><div class="content" id="slide-10">
+       <div class="container"><h1>we are doing it, too.</h1><h2>codename: lolcatlizr</h2></div>
+      </div><div class="content" id="slide-11">
+       <div class="container"><h1>requirements</h1></div>
+      </div><div class="content" id="slide-12">
+       <div class="container"><h1>central storage</h1><ul><li>Database ?
+</li><li>SCM ?
+</li><li>Google Docs ?
+</li></ul></div>
+      </div><div class="content" id="slide-13">
+       <div class="container"><h1>a canonical format</h1></div>
+      </div><div class="content" id="slide-14">
+       <div class="container"><h1>Android</h1><h3>res/value/strings.xml</h3><pre><code>&lt;resources&gt;
+  &lt;string name=&quot;selected&quot;&gt;You selected: $1%s&lt;/string&gt;
+  &lt;plurals name=&quot;beers&quot;&gt;
+    &lt;item quantity=&quot;one&quot;&gt;Buy one bottle of beer&lt;/item&gt;
+    &lt;item quantity=&quot;other&quot;&gt;Buy %d bottles of beer&lt;/item&gt;
+  &lt;/plurals&gt;
+&lt;/resources&gt;
+</code></pre></div>
+      </div><div class="content" id="slide-15">
+       <div class="container"><h1>iOS</h1><h3>Resources/en.lproj/Localizable.strings</h3><pre><code>&quot;selected&quot; = &quot;You selected: $1%@&quot;;
+&quot;beers_one&quot; = &quot;Buy one bottle of beer&quot;;
+&quot;beers_other&quot; = &quot;Buy %d bottles of beer&quot;;
+</code></pre></div>
+      </div><div class="content" id="slide-16">
+       <div class="container"><h1>Android+iOS import/export</h1></div>
+      </div><div class="content" id="slide-17">
+       <div class="container"><h1>nice to haves</h1><ul><li>history
+</li><li>provide translation context
+</li><li>later: integration with Git(hub)
+</li><li>integration with translation services
+</li></ul></div>
+      </div><div class="content" id="slide-18">
+       <div class="container"><h1>Automate translation</h1><iframe
+src="http://mygengo.com/api/developer-docs/methods/translate-job-post/"></iframe>
+</div>
+      </div><div class="content" id="slide-19">
+       <div class="container"><h1>demo</h1></div>
+      </div><div class="content" id="slide-20">
+       <div class="container"><h1>start early!</h1></div>
+      </div><div class="content" id="slide-21">
+       <div class="container"><h3>have consistent / namespaced keys</h3><h4>Android</h4><pre><code>&lt;string name=&quot;dashboard_ticker_title&quot;&gt;New new message&lt;/string&gt;
+&lt;string name=&quot;dashboard_ticker_message&quot;&gt;You have a new message&lt;/string&gt;
+</code></pre><h4>iOS</h4><pre><code>&quot;dashboard_ticker_title&quot; = &quot;New message&quot;;
+&quot;dashboard_ticker_message&quot; = &quot;You have a new message&quot;;
+</code></pre></div>
+      </div><div class="content" id="slide-22">
+       <div class="container"><h1>l10n/i18n: it's hard</h1><a href="http://bit.ly/localehorror">http://bit.ly/localehorror</a>
+<iframe
+class="zoomed" src="http://search.cpan.org/dist/Locale-Maketext/lib/Locale/Maketext/TPJ13.pod#A_Localization_Horror_Story:_It_Could_Happen_To_You"></iframe>
+</div>
+      </div><div class="content" id="slide-23">
+       <div class="container"><h1>it's hard #2</h1><iframe
+class="zoomed" src="http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html"></iframe>
+</div>
+      </div><div class="content" id="slide-24">
+       <div class="container"><h1>questions?</h1></div>
+      </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="js/custom.js?1318247176044"></script>
+      </body>
+    </html>
